@@ -14,6 +14,7 @@ const userRoutes = require("./routes/user.js");
 const itemRouter = require("./routes/items");
 const catRouter = require("./routes/categories");
 const contactusRoutes = require("./routes/contact");
+const reservationRoutes = require("./routes/reservations.js")
 
 
 
@@ -36,6 +37,9 @@ app.use("/item", itemRouter);
 app.use("/category", catRouter);
 app.use("/contactus", contactusRoutes);
 app.use("/user", userRoutes);
+app.use("/res", reservationRoutes);
+
+
 
 
 
