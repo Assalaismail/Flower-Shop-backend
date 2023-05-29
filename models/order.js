@@ -12,15 +12,13 @@ const order = new Schema(
           ref: "items",
           required: [true, "Please include a productTable"],
         },
-        name: {
-          type: String,
-        },
         quantity: {
           type: Number,
         },
         price: {
           type: Number,
         },
+       
       },
     ],
     payment_type: {
