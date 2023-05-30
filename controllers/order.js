@@ -5,7 +5,7 @@ const order = require("../models/order.js");
 
 const getAllOrder = async (req, res) => {
   try {
-    const orders = await order.find();
+    const orders = await order.find().populate("cart.productID");
     res.send(orders);
   } catch (error) {
     res.status(500).send(error);

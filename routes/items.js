@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const upload= require('../middleware/upload')
+const { protect } = require("../middleware/authMiddleware");
+
 
 const {getitembyid,getitems,getdiscount,getItemsByCategory, getItemsByCategoryName, postitems,deleteitems, updateitems}=require("../controllers/items");
 
@@ -12,9 +14,9 @@ router.get("/getdiscountflower",getdiscount)
 
 
 
-router.post("/addflower",upload.single('image'),postitems)
-router.delete("/delflower/:id",deleteitems)
-router.put("/updflower/:id",updateitems)
+router.post("/addflower",protect,upload.single('image'),postitems)
+router.delete("/delflower/:id",protect,deleteitems)
+router.put("/updflower/:id",protect,updateitems)
 
 
 module.exports=router;

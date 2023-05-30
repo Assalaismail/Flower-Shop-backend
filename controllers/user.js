@@ -82,7 +82,8 @@ const loginUser=async(req,res)=>{
       
         })
     }else {
-        return res.send({ message: "User doesnt  exist." })
+      res.status(401).json({ message: "Invalid email or password." });
+
 
     }
 }

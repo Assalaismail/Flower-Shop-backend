@@ -29,9 +29,11 @@ const order = new Schema(
     },
     phone_number: {
       type: Number,
+      required:true,
     },
     address: {
       type: String,
+      required: true,
     },
     created_at: {
       type: Date,
