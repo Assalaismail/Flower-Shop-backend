@@ -8,6 +8,9 @@ const {
   deleteReservationById
 } = require("../controllers/reservations");
 
+const { protect } = require("../middleware/authMiddleware");
+
+
 // Create a new reservation
 router.post("/reservations", createReservation);
 
@@ -21,6 +24,6 @@ router.get("/reservations/:id", getReservationById);
 router.put("/reservations/:id", updateReservationById);
 
 // Delete a reservation by ID
-router.delete("/reservations/:id", deleteReservationById);
+router.delete("/reservations/:id",protect, deleteReservationById);
 
 module.exports = router;

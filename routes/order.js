@@ -7,6 +7,8 @@ const { updateOrder } = require("../controllers/order");
 const { deleteOrder } = require("../controllers/order");
 const { deletecart } = require("../controllers/order")
 
+const { protect } = require("../middleware/authMiddleware");
+
 router.get('/', getAllOrder);
 router.post('/', setOrder);
 router.get('/:id',getOrder )
