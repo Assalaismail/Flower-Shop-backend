@@ -81,6 +81,7 @@ const loginUser=async(req,res)=>{
             userType:user.userType,
             token:generatetoken(user.id)
       
+            
         })
     }else {
       res.status(401).json({ message: "User doesn't exist" });
